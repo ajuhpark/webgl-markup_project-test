@@ -1,0 +1,34 @@
+{
+  "name": "webgl-markup_project",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel serve index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajuhpark/webgl-markup_project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajuhpark/webgl-markup_project/issues"
+  },
+  "homepage": "https://github.com/ajuhpark/webgl-markup_project#readme",
+  "devDependencies": {
+    "@parcel/transformer-glsl": "^2.12.0",
+    "cssnano": "^6.1.2",
+    "postcss": "^8.4.38"
+  },
+  "dependencies": {
+    "@ashthornton/asscroll": "^2.0.11",
+    "@barba/core": "^2.9.7",
+    "dat.gui": "^0.7.9",
+    "gsap": "^3.12.5",
+    "parcel": "^2.12.0",
+    "three": "^0.163.0"
+  }
+}

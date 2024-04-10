@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../project"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../eleventy-blog-mnml"
+		}
+	],
+	"settings": {}
+}
