@@ -282,7 +282,7 @@ export default class Sketch{
             //     },0.1)
             //     .to(m.uniforms.uCorners.value,{
             //         z:0,
-            //         duration: 0.4
+            //         duration: 0.4e
             //     },0.2)
             //     .to(m.uniforms.uCorners.value,{
             //         w:0,

@@ -73,7 +73,7 @@ canvas {
 
 .item img {
   opacity: .1;
-  width: 30vw;
+  width: 45vw;
   height: 30vw;
 }
 
@@ -115,8 +115,15 @@ figure img {
 .single__top {
   background-position: 50%;
   background-size: cover;
-  width: 100%;
+  width: 80%;
+  height: 80%;
+}
+
+.single_top_container {
+  justify-content: center;
+  align-items: center;
   height: 100vh;
+  display: flex;
 }
 
 .footer {

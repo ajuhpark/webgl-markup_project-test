@@ -61,7 +61,7 @@ canvas{display: block}
     margin-right: 300px;
 }
 .item img{
-    width: 30vw;
+    width: 45vw;
     height: 30vw;
     opacity: 0.1;
 }
@@ -95,12 +95,27 @@ figure img{
 .single__content a{
     color: #fff;
 }
-.single__top{
+/* .single__top{
     height: 100vh;
     width: 100%;
     background-size: cover;
     background-position: 50% 50%;
+} */
+
+.single__top{
+    height: 80%;
+    width: 80%;
+    background-size: cover;
+    background-position: 50% 50%;
 }
+
+.single_top_container{
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .footer{
     border-top: 1px solid #ccc;
@@ -136,3 +151,15 @@ figure img{
 /* canvas{
     display: none !important;
 } */
+
+/* .js-image{
+    width:80%;
+    height:80vw;
+} */
+
+/* .inside_bannerImage img{
+    width: 80%;
+    height: 80%;
+    opacity: 0.1;
+} */
+

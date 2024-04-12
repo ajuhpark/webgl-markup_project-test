@@ -846,7 +846,7 @@ class Sketch {
             //     },0.1)
             //     .to(m.uniforms.uCorners.value,{
             //         z:0,
-            //         duration: 0.4
+            //         duration: 0.4e
             //     },0.2)
             //     .to(m.uniforms.uCorners.value,{
             //         w:0,
@@ -33886,7 +33886,7 @@ class OrbitControls extends (0, _three.EventDispatcher) {
 module.exports = "#define GLSLIFY 1\nuniform float time;\nuniform float uProgress;\nuniform vec2 uTextureSize;\nuniform sampler2D uTexture;\nvarying vec2 vUv;\n\nvarying vec2 vSize;\n\nvec2 getUV(vec2 uv, vec2 textureSize, vec2 quadSize){\n    vec2 tempUV = uv - vec2(0.5);\n\n    float quadAspect = quadSize.x/quadSize.y;\n    float textureAspect = textureSize.x/textureSize.y;\n    if(quadAspect<textureAspect){\n        tempUV = tempUV*vec2(quadAspect/textureAspect,1.);\n    } else{\n        tempUV = tempUV*vec2(1.,textureAspect/quadAspect);\n    }\n\n    tempUV += vec2(0.5);\n    return tempUV;\n}\nvoid main() {\n\n    vec2 correctUV = getUV(vUv,uTextureSize,vSize);\n    vec4 image = texture2D(uTexture,correctUV);\n    gl_FragColor = vec4( vUv,0.,1.);\n    gl_FragColor = image;\n}";
 
 },{}],"cTz87":[function(require,module,exports) {
-module.exports = "#define GLSLIFY 1\nuniform float time;\nuniform float uProgress;\nuniform vec2 uResolution;\nuniform vec2 uQuadSize;\nuniform vec4 uCorners;\nvarying vec2 vSize;\n\nvarying vec2 vUv;\nvoid main() {\n    float PI = 3.1415926;\n    vUv = uv;\n    float sine = sin(PI*uProgress);\n    float waves = sine * 0.1 * sin( 5. * length(uv) + 15. * uProgress);\n    vec4 defaultState = modelMatrix*vec4( position, 1.0 );\n    vec4 fullScreenState = vec4( position, 1.0 );\n    fullScreenState.x *=uResolution.x;\n    fullScreenState.y *=uResolution.y;\n    fullScreenState.z +=uCorners.x;\n    float cornersProgress = mix(\n        mix(uCorners.z,uCorners.w,uv.x),\n        mix(uCorners.x,uCorners.y,uv.x),\n        uv.y\n    );\n\n    vec4 finalState = mix(defaultState,fullScreenState,cornersProgress);\n\n    vSize = mix(uQuadSize,uResolution,cornersProgress);\n\n    gl_Position = projectionMatrix * viewMatrix * finalState;\n}";
+module.exports = "#define GLSLIFY 1\nuniform float time;\nuniform float uProgress;\nuniform vec2 uResolution;\nuniform vec2 uQuadSize;\nuniform vec4 uCorners;\nvarying vec2 vSize;\n\nvarying vec2 vUv;\nvoid main() {\n    float PI = 3.1415926;\n    vUv = uv;\n    float sine = sin(PI*uProgress);\n    float waves = sine * 0.1 * sin( 5. * length(uv) + 15. * uProgress);\n    vec4 defaultState = modelMatrix*vec4( position, 1.0 );\n    vec4 fullScreenState = vec4( position, 1.0 );\n    fullScreenState.x *=uResolution.x * 0.8;\n    fullScreenState.y *=uResolution.y * 0.8;\n    fullScreenState.z +=uCorners.x;\n    float cornersProgress = mix(\n        mix(uCorners.z, uCorners.w,uv.x),\n        mix(uCorners.x, uCorners.y,uv.x),\n        uv.y\n    );\n\n    vec4 finalState = mix(defaultState,fullScreenState,cornersProgress);\n\n    vSize = mix(uQuadSize,uResolution,cornersProgress);\n\n    gl_Position = projectionMatrix * viewMatrix * finalState;\n}";
 
 },{}],"8pIXW":[function(require,module,exports) {
 module.exports = require("68fde90d43fb6da9").getBundleURL("8twc1") + "1.d33eedc4.jpg" + "?" + Date.now();
